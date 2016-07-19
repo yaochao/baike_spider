@@ -23,7 +23,8 @@ class SpiderMain(object):
                 self.urlmanager.add_new_urls(new_urls)
                 self.outputer.collect_data(new_data)
 
-                if count == 1000:
+                if count == 10000:
+                    self.exceptionchandler.save_to_file()
                     print 'count %d complete' % count
                     break
                 count = count + 1
