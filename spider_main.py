@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-import url_manager, html_downloader, html_parser, html_outputer
+import url_manager, html_downloader, html_parser, html_outputer, exception_handler
 
 class SpiderMain(object):
 
@@ -9,6 +9,7 @@ class SpiderMain(object):
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()
+        self.exceptionchandler = exception_handler.ExceptionHandler()
 
     def crawl(self, root_url):
         count = 1
@@ -27,6 +28,7 @@ class SpiderMain(object):
                     break
                 count = count + 1
             except Exception, e:
+                self.exceptionchandler.url_collection(new_url)
                 print 'crawl faild'
                 print e
 
