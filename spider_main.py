@@ -10,7 +10,6 @@ class SpiderMain(object):
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()
 
-
     def crawl(self, root_url):
         count = 1
         self.urlmanager.add_new_url(root_url)
@@ -24,10 +23,12 @@ class SpiderMain(object):
                 self.outputer.collect_data(new_data)
 
                 if count == 1000:
+                    print 'count %d complete' % count
                     break
                 count = count + 1
-            except:
+            except Exception, e:
                 print 'crawl faild'
+                print e
 
         self.outputer.output()
 
