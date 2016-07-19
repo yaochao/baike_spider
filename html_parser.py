@@ -33,7 +33,7 @@ class HtmlParser(object):
     def parse(self, url, content):
         if url is None or content is None:
             return
-        soup = BeautifulSoup(content, 'html.parser', form_encoding='utf-8')
+        soup = BeautifulSoup(content, 'html.parser', from_encoding='utf-8')
         new_urls = self._get_new_urls(url, soup)
         new_data = self._get_new_data(url, soup)
         return new_urls, new_data
