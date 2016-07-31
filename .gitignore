@@ -91,3 +91,6 @@ ENV/
 # PyCharm project .idea/workspace.xml
 workspace.xml
 *.pyc
+
+# .idea
+.idea/
