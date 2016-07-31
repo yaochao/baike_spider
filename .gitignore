@@ -93,4 +93,4 @@ workspace.xml
 *.pyc
 
 # .idea
-.idea/
+#.idea/
