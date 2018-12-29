@@ -23,7 +23,7 @@ class SpiderMain(object):
                 self.urlmanager.add_new_urls(new_urls)
                 self.outputer.collect_data(new_data)
 
-                if count == 10000:
+                if count == 10:
                     self.exceptionchandler.save_to_file()
                     print 'count %d complete' % count
                     break
@@ -38,6 +38,6 @@ class SpiderMain(object):
 
 # main
 if __name__ == '__main__':
-    root_url = 'http://baike.baidu.com/view/21087.htm'
+    root_url = 'https://baike.baidu.com/item/Python/407313'
     obj_spider = SpiderMain()
     obj_spider.crawl(root_url)
